@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Expense Tracker | Sign Up{% endblock title %}</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'login_logout/font/material-icon/material-design-iconic-font.min.css' %}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static "login_logout/css/style.css" %}">
+      <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="heading_container heading_center">
+                    <h3 style="padding-top:20px;">
+                        INCOME EXPENSE <span style="color: #00bbf0;">TRACKER</span>
+                    </h3>
+                </div>
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" action="" class="register-form" id="register-form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="fname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="firstname" id="fname" placeholder="Enter FirstName" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="lname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="lastname" id="lname" placeholder="Enter LastName" required />
+                                <p id="usernameError" style="color: red;"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="uname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="uname" placeholder="Enter UserName" required />
+                                <p id="usernameError" style="color: red;"></p>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="pass" placeholder="Password" required />
+                                <small class="float-right" id="show-password">Show</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_password" id="re_pass" placeholder="Repeat your password" />
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all
+                                    statements in <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="register" id="signup" class="form-submit" value="Register" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="{% static "login_logout/images/signup-image.jpg" %}" alt="sing up image"></figure>
+                        <a href="{% url "login_user" %}" class="signup-image-link" style="color:green; font-size:18px">I am already member Login</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sign up ends here -->
+    </div>
+
+     <!-- footer section start -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="#">Income & Expenses Tracker System</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section end -->
+
+ 
+     
+    <!-- jS -->
+    <script src="{% static "login_logout/vendor/jquery/jquery.min.js" %}"></script>
+    <!-- jQery -->
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script type="text/javascript" src="{% static "login_logout/js/main.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+</body>
+</html>
