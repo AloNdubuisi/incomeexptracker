@@ -53,7 +53,7 @@ def register(request):
         password = request.POST.get('password')
         new_user = User.objects.create_user(username=username,email=email,password=password)
         new_user.firstname = first_name
-        new_user.lastname = first_name
+        new_user.lastname = last_name
         new_user.save()
         
         return redirect('login_user')
